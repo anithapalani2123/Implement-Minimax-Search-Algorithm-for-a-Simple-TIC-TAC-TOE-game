@@ -57,13 +57,15 @@ def minimax(game) return score(game) if game.over? scores = [] # an array of sco
 
 
 # Populate the scores array, recursing as needed
+```
 game.get_available_moves.each do |move|
     possible_game = game.get_new_state(move)
     scores.push minimax(possible_game)
     moves.push move
 end
-
+```
 # Do the min or the max calculation
+```
 if game.active_turn == @player
     # This is the max calculation
     max_score_index = scores.each_with_index.max[1]
@@ -76,7 +78,7 @@ else
     return scores[min_score_index]
 end
 
-
+```
 
 ## PROGRAM:
 ```python
